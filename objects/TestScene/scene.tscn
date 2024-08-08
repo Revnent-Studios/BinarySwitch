@@ -14,4 +14,4 @@ position = Vector2(580, 538)
 shape = SubResource("RectangleShape2D_g12rl")
 
 [node name="Character" parent="." instance=ExtResource("1_vad2f")]
-position = Vector2(414, 372)
+position = Vector2(518, 407)
