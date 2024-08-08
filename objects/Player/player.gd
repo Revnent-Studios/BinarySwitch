@@ -5,9 +5,9 @@ class_name player
 # false is 0, true is 1
 var state = false
 
-const speed = 500
-const jump = 2000
-const gravity = 120
+const speed = 300
+const jump = 500
+const gravity = 1500
 
 
 func _input(event):
@@ -15,10 +15,21 @@ func _input(event):
 		# inverts state
 		state= !(state)
 
+func Jump(delta):
+	velocity.y = -jump
+
+func Fall(delta):
+	velocity.y += (gravity*delta)
+
+func playerMovement(delta):
+	var vector = getDir()	
+	velocity.x = vector.x*speed
+	move_and_slide()
+
 func getDir() -> Vector2:
 	var inputDir = Vector2.ZERO
 	inputDir.x = Input.get_axis("Left", "Right")
+	inputDir.y = Input.get_axis("Up", "Down")
 	inputDir = inputDir.normalized()
 	
 	return inputDir
-	
