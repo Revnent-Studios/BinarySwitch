@@ -30,18 +30,23 @@ func Jump(delta):
 		
 		if Input.is_action_pressed("Left"):
 			
-			print("Walljump from left wall")
 			walljump_input_hold = true
-			# make timer to set input hold to false after 0.5 second 
 			walljump = false
+			
 			velocity.y = -jump
 			velocity.x += 300
-			print(velocity)
+			await get_tree().create_timer(0.2).timeout
+			walljump_input_hold = false
 			
 		elif Input.is_action_pressed("Right"):
-			velocity.y = -jump
-			velocity.x = speed*3
+			
+			walljump_input_hold = true
 			walljump = false
+			
+			velocity.y = -jump
+			velocity.x -= 300
+			await get_tree().create_timer(0.2).timeout
+			walljump_input_hold = false
 			
 		# walljump set to false if jumped when on wall only
 		

@@ -22,4 +22,3 @@ func _physics_process(delta):
 		onwall = true
 	else:
 		onwall = false
-
