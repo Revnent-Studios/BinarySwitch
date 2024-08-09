@@ -9,7 +9,6 @@ func _process(delta):
 	pass
 	
 func _physics_process(delta):
-	print(walljump)
 	playerMovement(delta)	
 	if Input.is_action_just_pressed("Jump"):
 		Jump(delta)
@@ -23,4 +22,3 @@ func _physics_process(delta):
 		onwall = true
 	else:
 		onwall = false
-
