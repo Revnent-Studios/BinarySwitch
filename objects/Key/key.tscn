@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cenbdcf1nfeqt"]
+
+[ext_resource type="Script" path="res://objects/Key/key.gd" id="1_j4uyj"]
+[ext_resource type="Texture2D" uid="uid://bc00qn4e75u8f" path="res://assets/Authkey.png" id="1_o3w6c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrmqb"]
+radius = 7.0
+
+[node name="Key" type="Node2D"]
+script = ExtResource("1_j4uyj")
+
+[node name="Authkey" type="Sprite2D" parent="."]
+texture = ExtResource("1_o3w6c")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qrmqb")
+debug_color = Color(0.232265, 0.637612, 9.62615e-07, 0.42)
