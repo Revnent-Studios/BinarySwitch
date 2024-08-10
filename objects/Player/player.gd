@@ -9,9 +9,12 @@ var onwall = false
 # if true can wall jump
 var walljump = true
 
-# this makes it so that the game does not take input for 0.3 seconds after wall jumping
-# this is so that the user does not walk towards the wall as soon as they jump off it
-var walljump_input_hold = false
+var dash = true
+
+# this makes it so that the game does not take input 
+# this is so that the user does not walk towards the wall as soon as they jump off it and for dash
+var input_hold = false
+var gravitybool = true
 
 const speed = 300
 const jump = 750
@@ -34,38 +37,47 @@ func Jump(delta):
 		
 		if Input.is_action_pressed("Left"):
 			
-			walljump_input_hold = true
+			input_hold = true
 			walljump = false
 			
 			velocity.y = -jump*2
 			velocity.x += 300
 			await get_tree().create_timer(0.3).timeout
-			walljump_input_hold = false
+			input_hold = false
 			
 		elif Input.is_action_pressed("Right"):
 			
-			walljump_input_hold = true
+			input_hold = true
 			walljump = false
 			
 			velocity.y = -jump*2
 			velocity.x -= 300
 			await get_tree().create_timer(0.2).timeout
-			walljump_input_hold = false
-			
-		
-
+			input_hold = false
 
 func Fall(delta):
-	#print(velocity.y)
-	if velocity.y < fallspeedcap:
-		velocity.y += (gravity*delta)
-	if is_on_wall() and Input.is_action_pressed("Left") or is_on_wall() and Input.is_action_pressed("Right"):
-		velocity.y = velocity.y/2
-		
+	if gravitybool:
+		if velocity.y < fallspeedcap:
+			velocity.y += (gravity*delta)
+		if is_on_wall() and Input.is_action_pressed("Left") or is_on_wall() and Input.is_action_pressed("Right"):
+			velocity.y = velocity.y/2
+
+func Dash(delta):
+	dash = false
+	input_hold = true
+	gravitybool = false
 	
+	velocity = getDir()*1000
+	print(getDir())
+	await get_tree().create_timer(0.2).timeout
+	#velocity.y = 0
+	velocity = Vector2.ZERO
+	await get_tree().create_timer(0.1).timeout
+	input_hold = false
+	gravitybool = true
 
 func playerMovement(delta):
-	if !walljump_input_hold:
+	if !input_hold:
 		var vector = getDir()
 		velocity.x = vector.x*speed
 	move_and_slide()	
