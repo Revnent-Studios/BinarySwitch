@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bxd01x1jg3aum" path="res://assets/Free/Main Characters/Virtual Guy/Jump (32x32).png" id="2_kbab7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8cexu"]
-radius = 22.0
-height = 56.0
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_1oe55")
@@ -16,5 +14,5 @@ shape = SubResource("CapsuleShape2D_8cexu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(9, -8)
-scale = Vector2(1.65625, 1.6875)
+scale = Vector2(0.981, 1)
 texture = ExtResource("2_kbab7")

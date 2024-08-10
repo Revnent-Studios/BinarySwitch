@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq1pfv4banw1w"]
+
+[ext_resource type="Texture2D" uid="uid://dgaa8p17gp8iw" path="res://assets/Sprite-0001.png" id="1_6h846"]
+[ext_resource type="PackedScene" uid="uid://c5sxy2obw74nf" path="res://objects/Player/Character.tscn" id="2_o6k4n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ry7ty"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8n7c5"]
+texture = ExtResource("1_6h846")
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_pufdv"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_ry7ty")
+sources/0 = SubResource("TileSetAtlasSource_8n7c5")
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_pufdv")
+format = 2
+layer_0/tile_data = PackedInt32Array(524288, 0, 3, 524289, 0, 3, 524290, 0, 3, 524291, 0, 3, 524292, 0, 3, 524293, 0, 3, 524294, 0, 3, 524295, 0, 3, 524296, 0, 3, 524297, 0, 3, 524298, 0, 3, 524299, 0, 3, 524300, 0, 3, 524301, 0, 3, 524302, 0, 3)
+
+[node name="Character" parent="." instance=ExtResource("2_o6k4n")]
+position = Vector2(63, 83)
