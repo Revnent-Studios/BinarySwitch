@@ -16,10 +16,11 @@ var dash = true
 var input_hold = false
 var gravitybool = true
 
-const speed = 300
-const jump = 750
-const gravity = 2000
-const fallspeedcap = 750
+const speed = 200
+const jump = 350
+const gravity = 1000
+const fallspeedcap = 350
+const dashspeed = 400
 
 
 func _input(event):
@@ -67,8 +68,7 @@ func Dash(delta):
 	input_hold = true
 	gravitybool = false
 	
-	velocity = getDir()*1000
-	print(getDir())
+	velocity = getDir()*dashspeed
 	await get_tree().create_timer(0.2).timeout
 	#velocity.y = 0
 	velocity = Vector2.ZERO
