@@ -1,5 +1,6 @@
 extends Node2D
 
+signal collectKey
 
 var x:int = 0
 
@@ -15,3 +16,7 @@ func _ready():
 
 func _process(delta):
 	pass
+
+
+func _on_area_2d_body_entered(body):
+	emit_signal("collectKey")

@@ -78,7 +78,7 @@ sources/0 = SubResource("TileSetAtlasSource_vi160")
 
 [node name="Level1" type="Node2D"]
 
-[node name="Door" parent="." instance=ExtResource("1_rjmgw")]
+[node name="Door" parent="." groups=["door"] instance=ExtResource("1_rjmgw")]
 position = Vector2(217, 448)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -89,8 +89,10 @@ layer_0/tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 2, 131072, 0, 2, 196608,
 [node name="Key" parent="." groups=["key"] instance=ExtResource("4_5rkwp")]
 position = Vector2(307, 441)
 
-[node name="Character" parent="." instance=ExtResource("2_y3gqh")]
+[node name="Character" parent="." groups=["balle"] instance=ExtResource("2_y3gqh")]
 position = Vector2(76, 452)
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("5_7m8hj")
+
+[connection signal="collectKey" from="Key" to="LevelManager" method="_on_key_collect_key"]

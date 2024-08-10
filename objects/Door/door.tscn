@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://chskx8tf5gyhr"]
+[gd_scene load_steps=4 format=3 uid="uid://chskx8tf5gyhr"]
 
+[ext_resource type="Script" path="res://objects/Door/door.gd" id="1_8h05f"]
 [ext_resource type="Texture2D" uid="uid://dv3pdr6xvnpa0" path="res://assets/Door.png" id="1_b68uy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_beqyt"]
 size = Vector2(18, 33)
 
 [node name="Door" type="Node2D"]
+script = ExtResource("1_8h05f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_b68uy")
