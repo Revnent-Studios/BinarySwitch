@@ -1,11 +1,14 @@
-[gd_scene load_steps=52 format=3 uid="uid://c5sxy2obw74nf"]
+[gd_scene load_steps=54 format=3 uid="uid://c5sxy2obw74nf"]
 
 [ext_resource type="Script" path="res://objects/Player/Character.gd" id="1_1oe55"]
 [ext_resource type="Texture2D" uid="uid://bs0umthpkaxvd" path="res://assets/Free/Main Characters/BalleBalle/BalleBalle.png" id="2_g4cfb"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8cexu"]
-radius = 12.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwnkq"]
+radius = 9.0
 height = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xblub"]
+size = Vector2(23, 21.5)
 
 [sub_resource type="Animation" id="Animation_ml8lc"]
 resource_name = "Fall"
@@ -526,15 +529,15 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oevh3"]
 advance_mode = 2
-advance_condition = &"Idle"
+advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eeksu"]
 advance_mode = 2
-advance_condition = &"Running"
+advance_condition = &"running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_velyn"]
 advance_mode = 2
-advance_condition = &"Idle"
+advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jfi7m"]
 advance_mode = 2
@@ -604,6 +607,10 @@ advance_condition = &"idle"
 advance_mode = 2
 advance_condition = &"running"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0dqpg"]
+advance_mode = 2
+advance_condition = &"jumping"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_y5bvb"]
 states/Falling/node = SubResource("AnimationNodeBlendSpace2D_unns0")
 states/Falling/position = Vector2(404, 316.354)
@@ -615,15 +622,23 @@ states/Running/node = SubResource("AnimationNodeBlendSpace2D_80ob7")
 states/Running/position = Vector2(790, 55)
 states/WallHang/node = SubResource("AnimationNodeBlendSpace2D_4k510")
 states/WallHang/position = Vector2(742.905, 316.354)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_oevh3"), "Idle", "Running", SubResource("AnimationNodeStateMachineTransition_eeksu"), "Running", "Idle", SubResource("AnimationNodeStateMachineTransition_velyn"), "Idle", "Jumping", SubResource("AnimationNodeStateMachineTransition_jfi7m"), "Running", "Jumping", SubResource("AnimationNodeStateMachineTransition_tfh58"), "Jumping", "Idle", SubResource("AnimationNodeStateMachineTransition_5pm7k"), "Jumping", "Running", SubResource("AnimationNodeStateMachineTransition_1eg54"), "Idle", "Falling", SubResource("AnimationNodeStateMachineTransition_25pnm"), "Running", "Falling", SubResource("AnimationNodeStateMachineTransition_lidqk"), "Jumping", "Falling", SubResource("AnimationNodeStateMachineTransition_3yog4"), "Falling", "Idle", SubResource("AnimationNodeStateMachineTransition_xqh65"), "Falling", "Running", SubResource("AnimationNodeStateMachineTransition_k4v6m"), "Falling", "WallHang", SubResource("AnimationNodeStateMachineTransition_861l3"), "WallHang", "Falling", SubResource("AnimationNodeStateMachineTransition_j1xtx"), "Jumping", "WallHang", SubResource("AnimationNodeStateMachineTransition_6n4bn"), "WallHang", "Jumping", SubResource("AnimationNodeStateMachineTransition_3mqsf"), "Running", "WallHang", SubResource("AnimationNodeStateMachineTransition_lnyya"), "Idle", "WallHang", SubResource("AnimationNodeStateMachineTransition_lsloy"), "WallHang", "Idle", SubResource("AnimationNodeStateMachineTransition_l67ip"), "WallHang", "Running", SubResource("AnimationNodeStateMachineTransition_fqqim")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_oevh3"), "Idle", "Running", SubResource("AnimationNodeStateMachineTransition_eeksu"), "Running", "Idle", SubResource("AnimationNodeStateMachineTransition_velyn"), "Idle", "Jumping", SubResource("AnimationNodeStateMachineTransition_jfi7m"), "Running", "Jumping", SubResource("AnimationNodeStateMachineTransition_tfh58"), "Jumping", "Idle", SubResource("AnimationNodeStateMachineTransition_5pm7k"), "Jumping", "Running", SubResource("AnimationNodeStateMachineTransition_1eg54"), "Idle", "Falling", SubResource("AnimationNodeStateMachineTransition_25pnm"), "Running", "Falling", SubResource("AnimationNodeStateMachineTransition_lidqk"), "Jumping", "Falling", SubResource("AnimationNodeStateMachineTransition_3yog4"), "Falling", "Idle", SubResource("AnimationNodeStateMachineTransition_xqh65"), "Falling", "Running", SubResource("AnimationNodeStateMachineTransition_k4v6m"), "Falling", "WallHang", SubResource("AnimationNodeStateMachineTransition_861l3"), "WallHang", "Falling", SubResource("AnimationNodeStateMachineTransition_j1xtx"), "Jumping", "WallHang", SubResource("AnimationNodeStateMachineTransition_6n4bn"), "WallHang", "Jumping", SubResource("AnimationNodeStateMachineTransition_3mqsf"), "Running", "WallHang", SubResource("AnimationNodeStateMachineTransition_lnyya"), "Idle", "WallHang", SubResource("AnimationNodeStateMachineTransition_lsloy"), "WallHang", "Idle", SubResource("AnimationNodeStateMachineTransition_l67ip"), "WallHang", "Running", SubResource("AnimationNodeStateMachineTransition_fqqim"), "Falling", "Jumping", SubResource("AnimationNodeStateMachineTransition_0dqpg")]
 graph_offset = Vector2(-122.095, -135.899)
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_1oe55")
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(10, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_fwnkq")
+debug_color = Color(0.677733, 0, 0.182976, 0.42)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, -4)
-shape = SubResource("CapsuleShape2D_8cexu")
+position = Vector2(10, -3.25)
+shape = SubResource("RectangleShape2D_xblub")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(9, -8)
@@ -639,8 +654,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_y5bvb")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/Idle = false
-parameters/conditions/Running = false
 parameters/conditions/falling = false
 parameters/conditions/hang = false
 parameters/conditions/idle = false

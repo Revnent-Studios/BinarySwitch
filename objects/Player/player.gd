@@ -8,7 +8,6 @@ var onwall = false
 
 # if true can wall jump
 var walljump = true
-
 var dash = true
 
 # this makes it so that the game does not take input 
@@ -33,21 +32,20 @@ func Jump(delta):
 	if is_on_floor():
 		velocity.y = -jump
 	elif is_on_wall_only() and walljump:
-		
 		# wall jump in direction opposite to the wall
 		
 		if Input.is_action_pressed("Left"):
-			
+
 			input_hold = true
 			walljump = false
 			
 			velocity.y = -jump*2
 			velocity.x += 300
-			await get_tree().create_timer(0.3).timeout
+			await get_tree().create_timer(0.2).timeout
 			input_hold = false
 			
 		elif Input.is_action_pressed("Right"):
-			
+
 			input_hold = true
 			walljump = false
 			
