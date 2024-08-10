@@ -12,9 +12,13 @@ func _physics_process(delta):
 	playerMovement(delta)	
 	if Input.is_action_just_pressed("Jump"):
 		Jump(delta)
+	if Input.is_action_just_pressed("Dash"):
+		if dash:
+			Dash(delta)
 		
 	if is_on_floor():
 		walljump = true
+		dash = true
 	else:
 		Fall(delta)
 		
