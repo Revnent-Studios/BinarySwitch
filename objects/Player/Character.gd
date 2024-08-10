@@ -1,9 +1,10 @@
 extends player
 
+@onready var animtree = $"AnimationTree"
 
 func _ready():
 	# initializes variables
-	state = state
+	animtree.active = true
 
 func _process(delta):
 	pass
@@ -11,6 +12,7 @@ func _process(delta):
 func _physics_process(delta):
 	playerMovement(delta)	
 	if Input.is_action_just_pressed("Jump"):
+		
 		Jump(delta)
 	if Input.is_action_just_pressed("Dash"):
 		if dash:
