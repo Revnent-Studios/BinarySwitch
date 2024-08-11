@@ -64,7 +64,7 @@ func _physics_process(delta):
 			Dash(delta)
 		
 	if is_on_floor():
-		walljump = true
+		walljump = 3
 		dash = true
 	else:
 		Fall(delta)

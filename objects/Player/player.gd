@@ -7,7 +7,7 @@ var state = false
 var onwall = false
 
 # if true can wall jump
-var walljump = true
+var walljump = 3
 var dash = true
 
 var lastdir = null
@@ -38,13 +38,13 @@ func Jump(delta):
 	
 	if is_on_floor():
 		velocity.y = -jump
-	elif is_on_wall_only() and walljump:
+	elif is_on_wall_only() and walljump != 0:
 		# wall jump in direction opposite to the wall
 		
 		if lastdir == "Left":
 
 			input_hold = true
-			walljump = false
+			walljump -=1
 			
 			velocity.y = -jump*2
 			velocity.x += 300
@@ -54,7 +54,7 @@ func Jump(delta):
 		elif lastdir == "Right":
 
 			input_hold = true
-			walljump = false
+			walljump -= 1
 			
 			velocity.y = -jump*2
 			velocity.x -= 300
@@ -81,7 +81,7 @@ func Dash(delta):
 	await get_tree().create_timer(0.2).timeout
 	#velocity.y = 0
 	velocity = Vector2.ZERO
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.05).timeout
 	input_hold = false
 	gravitybool = true
 
