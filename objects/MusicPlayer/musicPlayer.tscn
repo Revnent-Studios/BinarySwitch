@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bufdj1v72ims4"]
+
+[ext_resource type="AudioStream" uid="uid://b4qeg7yjnpevo" path="res://assets/Music/The-25th-Hour-Schlatt-Crossing-PM-Music.mp3" id="1_a4vke"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_a4vke")
+autoplay = true
