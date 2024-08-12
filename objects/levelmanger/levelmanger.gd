@@ -3,7 +3,11 @@ class_name LevelManager
 
 @onready var level = get_tree()
 @onready var switches = level.get_first_node_in_group("tiles")
+@onready var balle = level.get_first_node_in_group("balle")
+
 var switchable:bool = true
+
+
 
 var key
 var door
@@ -17,6 +21,7 @@ func _ready():
 func _on_key_collect_key():
 	level.get_first_node_in_group("key").queue_free()
 	door.open()
+	balle.collect()
 
 func _process(delta):
 		switch()
@@ -24,11 +29,12 @@ func _process(delta):
 func switch():
 	if Input.is_action_just_pressed("StateShift"):
 		if (shiftVal == 0):
-			
+			balle.shift()
 			switches.set("layer_1/enabled",shiftVal)
 			shiftVal = 1
 			switches.set("layer_2/enabled",shiftVal)
 		else :
+			balle.shift2()
 			switches.set("layer_1/enabled",shiftVal)
 			shiftVal = 0
 			switches.set("layer_2/enabled",shiftVal)
