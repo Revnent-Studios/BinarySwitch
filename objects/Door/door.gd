@@ -16,4 +16,5 @@ func open():
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("balle"):
 		success.emit(is_open)
-		animation_player.play("win")
+		if animation_player:
+			animation_player.play("win")

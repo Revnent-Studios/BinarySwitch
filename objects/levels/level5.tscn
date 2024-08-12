@@ -107,6 +107,33 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_mlex4")
 sources/0 = SubResource("TileSetAtlasSource_vi160")
 sources/1 = SubResource("TileSetScenesCollectionSource_qsbqa")
 
+[sub_resource type="Animation" id="Animation_61jeo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_rx4uu"]
 resource_name = "win"
 tracks/0/type = "value"
@@ -146,33 +173,6 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_61jeo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2bp0f"]
 _data = {
 "RESET": SubResource("Animation_61jeo"),
@@ -205,7 +205,7 @@ layer_4/tile_data = PackedInt32Array(458765, 65536, 3, 393229, 65536, 3, 327693,
 position = Vector2(431, 173)
 
 [node name="Character" parent="." groups=["balle"] instance=ExtResource("8_vriw8")]
-position = Vector2(391, 180)
+position = Vector2(87, 455)
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("9_3omqr")
