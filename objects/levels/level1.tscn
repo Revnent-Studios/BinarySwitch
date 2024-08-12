@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://d01lpbo8ogoou"]
+[gd_scene load_steps=11 format=3 uid="uid://d01lpbo8ogoou"]
 
 [ext_resource type="PackedScene" uid="uid://chskx8tf5gyhr" path="res://objects/Door/door.tscn" id="1_rjmgw"]
 [ext_resource type="PackedScene" uid="uid://c5sxy2obw74nf" path="res://objects/Player/Character.tscn" id="2_y3gqh"]
 [ext_resource type="Texture2D" uid="uid://d0y63kkccpg1n" path="res://assets/World tiles.png" id="3_78md8"]
 [ext_resource type="PackedScene" uid="uid://cenbdcf1nfeqt" path="res://objects/Key/key.tscn" id="4_5rkwp"]
 [ext_resource type="Script" path="res://objects/levelmanger/levelmanger.gd" id="5_7m8hj"]
+[ext_resource type="Texture2D" uid="uid://o2d0fxsk56g0" path="res://assets/walljumpguide.png" id="6_cmima"]
+[ext_resource type="Texture2D" uid="uid://vfut7tnil5jo" path="res://assets/arrow.png" id="7_qm7ab"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mlex4"]
 
@@ -114,6 +116,38 @@ position = Vector2(76, 452)
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("5_7m8hj")
+
+[node name="Walljumpguide" type="Sprite2D" parent="."]
+position = Vector2(435, 401)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("6_cmima")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(196, 378)
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("7_qm7ab")
+
+[node name="Arrow2" type="Sprite2D" parent="."]
+position = Vector2(81, 278)
+rotation = 3.14159
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("7_qm7ab")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 112.0
+offset_top = 404.0
+offset_right = 463.0
+offset_bottom = 427.0
+scale = Vector2(0.625, 0.625)
+text = "Switch Binary State to Toggle these Platforms"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 59.0
+offset_top = 238.0
+offset_right = 410.0
+offset_bottom = 261.0
+scale = Vector2(0.625, 0.625)
+text = "Authentication Key"
 
 [connection signal="success" from="Door" to="LevelManager" method="_on_door_success"]
 [connection signal="collectKey" from="Key" to="LevelManager" method="_on_key_collect_key"]
