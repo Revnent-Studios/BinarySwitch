@@ -131,7 +131,7 @@ layer_2/tile_data = PackedInt32Array(1638405, 65536, 393219, 1638411, 65536, 393
 position = Vector2(254, 70)
 
 [node name="Character" parent="." groups=["balle"] instance=ExtResource("8_d5vbo")]
-position = Vector2(250, 453)
+position = Vector2(245, 69)
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("9_t0bnw")
