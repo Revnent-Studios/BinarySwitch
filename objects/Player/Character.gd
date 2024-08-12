@@ -92,8 +92,3 @@ func shift():
 func shift2():
 	$shift2.play()
 
-func freeze():
-	pause = true
-
-func unfreeze():
-	pause = false

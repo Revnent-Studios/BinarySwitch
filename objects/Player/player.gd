@@ -17,7 +17,6 @@ var wallmaxheight = 0
 # this is so that the user does not walk towards the wall as soon as they jump off it and for dash
 var input_hold = false
 var gravitybool = true
-var pause = false
 
 const speed = 200
 const jump = 350
@@ -90,8 +89,7 @@ func playerMovement(delta):
 	if !input_hold:
 		var vector = getDir()
 		velocity.x = vector.x*speed
-	if !pause:
-		move_and_slide()	
+	move_and_slide()	
 
 func getDir() -> Vector2:
 	var inputDir = Vector2.ZERO

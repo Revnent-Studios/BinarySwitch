@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d01lpbo8ogoou"]
+[gd_scene load_steps=9 format=3 uid="uid://d01lpbo8ogoou"]
 
 [ext_resource type="PackedScene" uid="uid://chskx8tf5gyhr" path="res://objects/Door/door.tscn" id="1_rjmgw"]
 [ext_resource type="PackedScene" uid="uid://c5sxy2obw74nf" path="res://objects/Player/Character.tscn" id="2_y3gqh"]
 [ext_resource type="Texture2D" uid="uid://d0y63kkccpg1n" path="res://assets/World tiles.png" id="3_78md8"]
 [ext_resource type="PackedScene" uid="uid://cenbdcf1nfeqt" path="res://objects/Key/key.tscn" id="4_5rkwp"]
 [ext_resource type="Script" path="res://objects/levelmanger/levelmanger.gd" id="5_7m8hj"]
-[ext_resource type="Texture2D" uid="uid://o2d0fxsk56g0" path="res://assets/walljumpguide.png" id="6_ck1sc"]
-[ext_resource type="Texture2D" uid="uid://vfut7tnil5jo" path="res://assets/arrow.png" id="7_6vcno"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mlex4"]
 
@@ -27,44 +25,44 @@ texture = ExtResource("3_78md8")
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 3:2/0 = 0
 3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:2/0/physics_layer_0/angular_velocity = 0.0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 0:3/0 = 0
 0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:3/0/physics_layer_0/angular_velocity = 0.0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 1:3/next_alternative_id = 9
 1:3/0 = 0
 1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/0/physics_layer_0/angular_velocity = 0.0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 1:3/6 = 6
 1:3/6/modulate = Color(1, 0, 0, 1)
 1:3/6/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -75,17 +73,17 @@ texture = ExtResource("3_78md8")
 1:3/7/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/7/physics_layer_0/angular_velocity = 0.0
 1:3/8 = 8
-1:3/8/modulate = Color(1, 0, 0, 0.282353)
+1:3/8/modulate = Color(1, 0, 0, 0.623529)
 1:3/8/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/8/physics_layer_0/angular_velocity = 0.0
 2:3/0 = 0
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:3/0/physics_layer_0/angular_velocity = 0.0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 3:3/0 = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.25, -8.125, -9.125, 8.125, 9, 8, 9, -8)
 
 [sub_resource type="TileSet" id="TileSet_kbkm1"]
 physics_layer_0/collision_layer = 1
@@ -98,7 +96,6 @@ sources/0 = SubResource("TileSetAtlasSource_vi160")
 position = Vector2(445, 319)
 
 [node name="TileMap" type="TileMap" parent="." groups=["tiles"]]
-position = Vector2(-9.77, 0)
 tile_set = SubResource("TileSet_kbkm1")
 format = 2
 layer_0/name = "Background"
@@ -117,38 +114,6 @@ position = Vector2(76, 452)
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("5_7m8hj")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 176.23
-offset_top = 403.0
-offset_right = 491.23
-offset_bottom = 426.0
-scale = Vector2(0.72, 0.799999)
-text = "Shift Binary State to trigger this platform"
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 56.23
-offset_top = 221.0
-offset_right = 317.23
-offset_bottom = 244.0
-scale = Vector2(0.72, 0.799999)
-text = "Authentication Key"
-
-[node name="Walljumpguide" type="Sprite2D" parent="."]
-position = Vector2(431.23, 403)
-scale = Vector2(0.199219, 0.333984)
-texture = ExtResource("6_ck1sc")
-
-[node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(194.23, 378)
-scale = Vector2(0.3125, 0.261719)
-texture = ExtResource("7_6vcno")
-
-[node name="Arrow2" type="Sprite2D" parent="."]
-position = Vector2(82.23, 270)
-rotation = 3.14159
-scale = Vector2(0.3125, 0.261719)
-texture = ExtResource("7_6vcno")
 
 [connection signal="success" from="Door" to="LevelManager" method="_on_door_success"]
 [connection signal="collectKey" from="Key" to="LevelManager" method="_on_key_collect_key"]

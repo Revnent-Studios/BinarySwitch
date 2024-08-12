@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://c5sxy2obw74nf"]
+[gd_scene load_steps=60 format=3 uid="uid://c5sxy2obw74nf"]
 
 [ext_resource type="Script" path="res://objects/Player/Character.gd" id="1_1oe55"]
 [ext_resource type="Texture2D" uid="uid://bs0umthpkaxvd" path="res://assets/Free/Main Characters/BalleBalle/BalleBalle.png" id="2_g4cfb"]
@@ -464,6 +464,9 @@ tracks/3/keys = {
 "values": [Vector2(4.78, -8)]
 }
 
+[sub_resource type="Animation" id="Animation_crl6o"]
+resource_name = "death"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yne2c"]
 _data = {
 "Fall": SubResource("Animation_ml8lc"),
@@ -476,7 +479,8 @@ _data = {
 "Run": SubResource("Animation_47qcp"),
 "RunFlip": SubResource("Animation_5ithl"),
 "WallHang": SubResource("Animation_i7ab3"),
-"WallHangFlip": SubResource("Animation_bnct2")
+"WallHangFlip": SubResource("Animation_bnct2"),
+"death": SubResource("Animation_crl6o")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_prsf8"]

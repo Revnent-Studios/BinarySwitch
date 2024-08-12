@@ -3,8 +3,9 @@ class_name LevelManager
 
 @onready var level = get_tree()
 @onready var switches = level.get_first_node_in_group("tiles")
-@onready var character = level.get_first_node_in_group("balle")
+@onready var balle = level.get_first_node_in_group("balle")
 
+var switchable:bool = true
 
 
 
@@ -49,8 +50,4 @@ const level_path = "res://objects/levels/level"
 
 func _on_door_success(is_open):
 	if is_open:
-		character.freeze()
-		await level.create_timer(0.5).timeout
-		character.gravitybool = true
-		character.input_hold = false
 		change_level()
