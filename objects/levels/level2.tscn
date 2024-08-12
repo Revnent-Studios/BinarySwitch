@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://vd7jd4884wah"]
+[gd_scene load_steps=15 format=3 uid="uid://vd7jd4884wah"]
 
+[ext_resource type="PackedScene" uid="uid://c1s84hvl6ahi4" path="res://objects/background/background2.tscn" id="1_7gcqd"]
 [ext_resource type="PackedScene" uid="uid://chskx8tf5gyhr" path="res://objects/Door/door.tscn" id="1_e2tbm"]
 [ext_resource type="Texture2D" uid="uid://d0y63kkccpg1n" path="res://assets/World tiles.png" id="2_ayddf"]
 [ext_resource type="PackedScene" uid="uid://cenbdcf1nfeqt" path="res://objects/Key/key.tscn" id="3_korn4"]
@@ -107,6 +108,10 @@ sources/0 = SubResource("TileSetAtlasSource_vi160")
 sources/1 = SubResource("TileSetScenesCollectionSource_qsbqa")
 
 [node name="Level2" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_7gcqd")]
+offset_top = -2.0
+offset_bottom = -2.0
 
 [node name="Door" parent="." groups=["door"] instance=ExtResource("1_e2tbm")]
 position = Vector2(448, 303)

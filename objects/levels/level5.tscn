@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://st3d8cjcsu4e"]
+[gd_scene load_steps=19 format=3 uid="uid://st3d8cjcsu4e"]
 
 [ext_resource type="Script" path="res://objects/levels/level5.gd" id="1_8l81x"]
 [ext_resource type="PackedScene" uid="uid://chskx8tf5gyhr" path="res://objects/Door/door.tscn" id="1_gvm0x"]
 [ext_resource type="Texture2D" uid="uid://d0y63kkccpg1n" path="res://assets/World tiles.png" id="2_336st"]
+[ext_resource type="PackedScene" uid="uid://dytbljy53hx5w" path="res://objects/background/background.tscn" id="2_qtdps"]
 [ext_resource type="PackedScene" uid="uid://cf1y58xm18uuc" path="res://objects/Spike/spikeup.tscn" id="3_1ptfc"]
 [ext_resource type="PackedScene" uid="uid://bisumf5sukbr" path="res://objects/Spike/spikedown.tscn" id="4_2n2xk"]
 [ext_resource type="PackedScene" uid="uid://u3vskbnvexyi" path="res://objects/Spike/spikeleft.tscn" id="5_7xscq"]
@@ -181,6 +182,12 @@ _data = {
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_8l81x")
+
+[node name="Background" parent="." instance=ExtResource("2_qtdps")]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
 
 [node name="Door" parent="." groups=["door"] instance=ExtResource("1_gvm0x")]
 position = Vector2(67, 447)

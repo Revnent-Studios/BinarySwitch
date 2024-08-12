@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1s84hvl6ahi4"]
+
+[ext_resource type="Shader" path="res://objects/background/background2.gdshader" id="1_3lbjb"]
+[ext_resource type="Texture2D" uid="uid://bfdls6njnbk01" path="res://assets/Free/Background/Blue.png" id="2_hky3f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jufbx"]
+shader = ExtResource("1_3lbjb")
+
+[node name="Background" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jufbx")
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 512.0
+texture = ExtResource("2_hky3f")
