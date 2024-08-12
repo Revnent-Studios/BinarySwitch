@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf1y58xm18uuc"]
+[gd_scene load_steps=3 format=3 uid="uid://u3vskbnvexyi"]
 
-[ext_resource type="Script" path="res://objects/Spike/spike.gd" id="1_bapkc"]
-[ext_resource type="Texture2D" uid="uid://d0y63kkccpg1n" path="res://assets/World tiles.png" id="2_5cj3y"]
+[ext_resource type="Script" path="res://objects/Spike/spike.gd" id="1_dgu0l"]
+[ext_resource type="Texture2D" uid="uid://d0y63kkccpg1n" path="res://assets/World tiles.png" id="2_neva8"]
 
 [node name="Spike" type="Node2D"]
-script = ExtResource("1_bapkc")
+rotation = -1.5708
+script = ExtResource("1_dgu0l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_5cj3y")
+texture = ExtResource("2_neva8")
 hframes = 4
 vframes = 4
 frame = 2

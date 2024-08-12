@@ -1,15 +1,15 @@
 [gd_scene load_steps=9 format=3 uid="uid://d01lpbo8ogoou"]
 
-[ext_resource type="PackedScene" uid="uid://chskx8tf5gyhr" path="res://objects/Door/door.tscn" id="1_e2tbm"]
-[ext_resource type="Texture2D" uid="uid://d0y63kkccpg1n" path="res://assets/World tiles.png" id="2_ayddf"]
-[ext_resource type="PackedScene" uid="uid://cenbdcf1nfeqt" path="res://objects/Key/key.tscn" id="3_korn4"]
-[ext_resource type="PackedScene" uid="uid://c5sxy2obw74nf" path="res://objects/Player/Character.tscn" id="4_n0cm2"]
-[ext_resource type="Script" path="res://objects/levelmanger/levelmanger.gd" id="5_0sax7"]
+[ext_resource type="PackedScene" uid="uid://chskx8tf5gyhr" path="res://objects/Door/door.tscn" id="1_rjmgw"]
+[ext_resource type="PackedScene" uid="uid://c5sxy2obw74nf" path="res://objects/Player/Character.tscn" id="2_y3gqh"]
+[ext_resource type="Texture2D" uid="uid://d0y63kkccpg1n" path="res://assets/World tiles.png" id="3_78md8"]
+[ext_resource type="PackedScene" uid="uid://cenbdcf1nfeqt" path="res://objects/Key/key.tscn" id="4_5rkwp"]
+[ext_resource type="Script" path="res://objects/levelmanger/levelmanger.gd" id="5_7m8hj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mlex4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vi160"]
-texture = ExtResource("2_ayddf")
+texture = ExtResource("3_78md8")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -90,10 +90,10 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_mlex4")
 sources/0 = SubResource("TileSetAtlasSource_vi160")
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
-[node name="Door" parent="." groups=["door"] instance=ExtResource("1_e2tbm")]
-position = Vector2(442, 298)
+[node name="Door" parent="." groups=["door"] instance=ExtResource("1_rjmgw")]
+position = Vector2(445, 319)
 
 [node name="TileMap" type="TileMap" parent="." groups=["tiles"]]
 tile_set = SubResource("TileSet_kbkm1")
@@ -103,15 +103,17 @@ layer_0/tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 2, 131072, 0, 2, 196608,
 layer_1/name = "ONE"
 layer_1/tile_data = PackedInt32Array(1376262, 65536, 3, 1376261, 65536, 3, 1376260, 65536, 3, 1376259, 65536, 3, 1376273, 65536, 3, 1376274, 65536, 3, 1376275, 65536, 3, 1376276, 65536, 3)
 layer_2/name = "zero"
+layer_2/enabled = false
 layer_2/tile_data = PackedInt32Array(1376266, 65536, 393219, 1376267, 65536, 393219, 1376268, 65536, 393219, 1376269, 65536, 393219, 1376280, 65536, 393219, 1376281, 65536, 393219, 1376282, 65536, 393219, 1376283, 65536, 393219, 1376284, 65536, 393219)
 
-[node name="Key" parent="." groups=["key"] instance=ExtResource("3_korn4")]
+[node name="Key" parent="." groups=["key"] instance=ExtResource("4_5rkwp")]
 position = Vector2(83, 313)
 
-[node name="Character" parent="." groups=["balle"] instance=ExtResource("4_n0cm2")]
+[node name="Character" parent="." groups=["balle"] instance=ExtResource("2_y3gqh")]
 position = Vector2(76, 452)
 
 [node name="LevelManager" type="Node" parent="."]
-script = ExtResource("5_0sax7")
+script = ExtResource("5_7m8hj")
 
+[connection signal="success" from="Door" to="LevelManager" method="_on_door_success"]
 [connection signal="collectKey" from="Key" to="LevelManager" method="_on_key_collect_key"]
