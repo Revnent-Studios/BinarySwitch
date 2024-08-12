@@ -33,14 +33,6 @@ func _physics_process(delta):
 		animtree["parameters/conditions/hang"] = false
 		animtree["parameters/conditions/running"] = true
 		animtree["parameters/conditions/idle"] = false
-	if is_on_wall():
-		animtree["parameters/conditions/falling"] = false
-		animtree["parameters/conditions/jumping"] = false
-		animtree["parameters/conditions/hang"] = true
-		animtree["parameters/conditions/running"] = false
-		animtree["parameters/conditions/idle"] = false
-	else:
-		animtree["parameters/conditions/hang"] = false
 	
 	if velocity.y>1 and !is_on_wall():
 		print("Falling")
@@ -49,13 +41,19 @@ func _physics_process(delta):
 		animtree["parameters/conditions/falling"] = true
 		animtree["parameters/conditions/jumping"] = false
 		animtree["parameters/conditions/hang"] = false
-	elif velocity.y<-1 and !is_on_wall():
+	elif velocity.y<-1:
 		print("Jumping")
 		animtree["parameters/conditions/running"] = false
 		animtree["parameters/conditions/idle"] = false
 		animtree["parameters/conditions/falling"] = false
 		animtree["parameters/conditions/jumping"] = true
 		animtree["parameters/conditions/hang"] = false
+	if is_on_wall():
+		animtree["parameters/conditions/falling"] = false
+		animtree["parameters/conditions/jumping"] = false
+		animtree["parameters/conditions/hang"] = true
+		animtree["parameters/conditions/running"] = false
+		animtree["parameters/conditions/idle"] = false
 	
 	if Input.is_action_just_pressed("Jump"):
 		Jump(delta)

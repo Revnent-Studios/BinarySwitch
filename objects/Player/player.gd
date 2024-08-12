@@ -41,7 +41,7 @@ func Jump(delta):
 	elif is_on_wall_only() and walljump != 0:
 		# wall jump in direction opposite to the wall
 		
-		if lastdir == "Left":
+		if Input.is_action_pressed("Left"):
 
 			input_hold = true
 			walljump -=1
@@ -51,7 +51,7 @@ func Jump(delta):
 			await get_tree().create_timer(0.2).timeout
 			input_hold = false
 			
-		elif lastdir == "Right":
+		elif Input.is_action_pressed("Right"):
 
 			input_hold = true
 			walljump -= 1
@@ -65,7 +65,7 @@ func Fall(delta):
 	if gravitybool:
 		if velocity.y < fallspeedcap:
 			velocity.y += (gravity*delta)
-		if is_on_wall():
+		if is_on_wall() and Input.is_action_pressed("Right") or is_on_wall() and Input.is_action_pressed("Left"):
 			if wallmaxheight > $".".position.y:
 				wallmaxheight = $".".position.y
 			if $".".position.y < wallmaxheight:
