@@ -78,3 +78,8 @@ func _physics_process(delta):
 	animtree["parameters/Falling/blend_position"] = facing
 	animtree["parameters/Jumping/blend_position"] = facing
 
+func freeze():
+	pause = true
+
+func unfreeze():
+	pause = false
