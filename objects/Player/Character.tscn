@@ -1,7 +1,12 @@
-[gd_scene load_steps=54 format=3 uid="uid://c5sxy2obw74nf"]
+[gd_scene load_steps=59 format=3 uid="uid://c5sxy2obw74nf"]
 
 [ext_resource type="Script" path="res://objects/Player/Character.gd" id="1_1oe55"]
 [ext_resource type="Texture2D" uid="uid://bs0umthpkaxvd" path="res://assets/Free/Main Characters/BalleBalle/BalleBalle.png" id="2_g4cfb"]
+[ext_resource type="AudioStream" uid="uid://cn0xglo5yp4tw" path="res://assets/Music/sfx/Jump.wav" id="3_o6nee"]
+[ext_resource type="AudioStream" uid="uid://cyn44i1wdfxmc" path="res://assets/Music/sfx/KeyCollect.wav" id="4_11o3o"]
+[ext_resource type="AudioStream" uid="uid://c3dxanqbs2av8" path="res://assets/Music/sfx/Dash.wav" id="5_a08pp"]
+[ext_resource type="AudioStream" uid="uid://bv4cakxurt3j4" path="res://assets/Music/sfx/stateshift.wav" id="6_qpfq0"]
+[ext_resource type="AudioStream" uid="uid://c1s7vy7ybxs6k" path="res://assets/Music/sfx/stateshift2.wav" id="7_fmfld"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwnkq"]
 radius = 9.0
@@ -676,3 +681,20 @@ parameters/Idle/blend_position = Vector2(-0.5056, 0.596899)
 parameters/Jumping/blend_position = Vector2(0.7056, 0.0232558)
 parameters/Running/blend_position = Vector2(0.6144, -0.0310078)
 parameters/WallHang/blend_position = Vector2(-0.5552, -0.217054)
+
+[node name="jumpsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o6nee")
+
+[node name="collectsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_11o3o")
+volume_db = -5.943
+
+[node name="dashsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_a08pp")
+volume_db = -9.905
+
+[node name="shift" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_qpfq0")
+
+[node name="shift2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fmfld")
