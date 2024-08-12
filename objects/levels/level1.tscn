@@ -93,7 +93,6 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_mlex4")
 sources/0 = SubResource("TileSetAtlasSource_vi160")
 
 [node name="Level2" type="Node2D"]
-position = Vector2(10.77, 0)
 
 [node name="Door" parent="." groups=["door"] instance=ExtResource("1_rjmgw")]
 position = Vector2(445, 319)

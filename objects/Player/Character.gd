@@ -1,13 +1,15 @@
 extends player
 
 @onready var animtree = $AnimationTree
+@onready var jumpsfx = $jumpsfx
+
 var facing = Vector2.ZERO
 var lastpress = 1
 
 func _ready():
 	# initializes variables
 	animtree.active = true
-	
+
 func _physics_process(delta):
 
 	if getDir()[0] == 0:
@@ -56,9 +58,12 @@ func _physics_process(delta):
 		animtree["parameters/conditions/idle"] = false
 	
 	if Input.is_action_just_pressed("Jump"):
+		if is_on_floor() or is_on_wall() and walljump:
+			jumpsfx.play()
 		Jump(delta)
 	if Input.is_action_just_pressed("Dash"):
 		if dash:
+			$dashsfx.play()
 			Dash(delta)
 		
 	if is_on_floor():
@@ -77,6 +82,15 @@ func _physics_process(delta):
 	animtree["parameters/WallHang/blend_position"] = facing
 	animtree["parameters/Falling/blend_position"] = facing
 	animtree["parameters/Jumping/blend_position"] = facing
+	
+func collect():
+	$collectsfx.play()
+	
+func shift():
+	$shift.play()
+	
+func shift2():
+	$shift2.play()
 
 func freeze():
 	pause = true
