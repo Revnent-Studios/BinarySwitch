@@ -5,7 +5,7 @@ In this platformer your objective is to collect the authentication key, unlock t
 
 ### Controls:
 
-###### Movement
+##### Movement
 
 WASD
 Arrow Keys
