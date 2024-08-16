@@ -7,24 +7,24 @@ In this platformer your objective is to collect the authentication key, unlock t
 
 ##### Movement
 
-WASD
-Arrow Keys
+WASD \n
+Arrow Keys \n
 
-###### Jump
+##### Jump
 
-Space
-Z
+Space \n
+Z \n
 
-###### Dash
+##### Dash
 
-Shift
-X
+Shift \n
+X \n
 
-######State Shift
+##### State Shift
 
-Alt
-LMB
-C
+Alt \n
+LMB \n
+C \n
 
 ### Credits:
 Background and Player Sprite: https://pixelfrog-assets.itch.io/pixel-adventure-1
