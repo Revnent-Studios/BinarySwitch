@@ -1,4 +1,4 @@
-This game was made for (The Alter Contest 7)[https://itch.io/jam/the-alter-contest-7] game jam.
+This game was made for [The Alter Contest 7](https://itch.io/jam/the-alter-contest-7) game jam.
 In this platformer your objective is to collect the authentication key, unlock the exit and leave. You can switch between 0 and 1 state to toggle platforms.
 
 
@@ -8,23 +8,23 @@ In this platformer your objective is to collect the authentication key, unlock t
 ##### Movement
 
 WASD \
-Arrow Keys \
+Arrow Keys 
 
 ##### Jump
 
 Space \
-Z \
+Z 
 
 ##### Dash
 
 Shift \
-X \
+X 
 
 ##### State Shift
 
 Alt \
 LMB \
-C \
+C 
 
 ### Credits:
 Background and Player Sprite: https://pixelfrog-assets.itch.io/pixel-adventure-1
